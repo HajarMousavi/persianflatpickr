@@ -77,7 +77,9 @@ async function buildScripts() {
   try {
     await buildFlatpickrJs();
     const transpiled = await readFileAsync("./dist/flatpickr.js");
-    fs.writeFile("./dist/flatpickr.min.js", uglify(transpiled));
+	const transpiledjdate = await readFileAsync("./lib/jdate.min.js");
+	const allTranspiled = transpiled + "  " + transpiledjdate;
+    fs.writeFile("./dist/flatpickr.min.js", uglify(allTranspiled));
   } catch (e) {
     logErr(e);
   }
