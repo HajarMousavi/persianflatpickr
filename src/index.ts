@@ -1,4 +1,6 @@
 import { Instance, FlatpickrFn, DayElement } from "./types/instance";
+//import * as jd from "./lib/jdate.js";
+
 import {
   Options,
   ParsedOptions,
@@ -36,6 +38,8 @@ import { tokenRegex, monthToStr } from "./utils/formatting";
 import "./utils/polyfills";
 
 const DEBOUNCED_CHANGE_MS = 300;
+
+//window.Date= jd.u;
 
 function FlatpickrInstance(
   element: HTMLElement,

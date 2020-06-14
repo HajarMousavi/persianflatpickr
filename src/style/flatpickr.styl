@@ -696,3 +696,27 @@ span.flatpickr-weekday
 
 .flatpickr-input[readonly]
   cursor pointer
+
+.flatpickr-current-month 
+  right 12.5%
+  left auto
+
+.flatpickr-rContainer,
+.flatpickr-calendar,
+.dayContainer,
+.flatpickr-weekdays,
+.flatpickr-days 
+  direction rtl
+  text-align right
+
+.flatpickr-current-month .numInputWrapper span.arrowUp,
+.flatpickr-current-month .numInputWrapper span.arrowDown 
+  right auto
+  left 0
+
+.flatpickr-time
+  -webkit-box-orient horizontal
+  -webkit-box-direction reverse
+  -webkit-flex-direction row-reverse
+  -ms-flex-direction row-reverse
+  flex-direction row-reverse

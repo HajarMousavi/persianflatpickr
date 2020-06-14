@@ -77,9 +77,9 @@ async function buildScripts() {
   try {
     await buildFlatpickrJs();
     const transpiled = await readFileAsync("./dist/flatpickr.js");
-	const transpiledjdate = await readFileAsync("./lib/jdate.min.js");
-	const allTranspiled = transpiled + "  " + transpiledjdate;
-    fs.writeFile("./dist/flatpickr.min.js", uglify(allTranspiled));
+      fs.writeFile("./dist/flatpickr.min.js", uglify(transpiled));
+      const jdate = await readFileAsync("./src/lib/jdate.js");
+      fs.writeFile("./dist/jdate.min.js", uglify(jdate));
   } catch (e) {
     logErr(e);
   }
@@ -157,7 +157,9 @@ async function buildStyle() {
       fs.writeFile("./dist/flatpickr.css", await transpileStyle(src)),
       fs.writeFile("./dist/flatpickr.min.css", await transpileStyle(src, true)),
       fs.writeFile("./dist/ie.css", await transpileStyle(srcIE)),
-    ]);
+    ]);	
+	const rtlcss = await readFileAsync("./src/style/themes/rtl.css");
+    fs.writeFile("./dist/themes/rtl.css", rtlcss);		
   } catch (e) {
     logErr(e);
   }
