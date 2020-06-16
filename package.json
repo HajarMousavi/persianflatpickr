@@ -1,6 +1,6 @@
 {
   "name": "persianflatpickr",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A lightweight, powerful javascript persian datetime picker",
   "scripts": {
     "build": "run-s build:pre build:build build:types build:post",
